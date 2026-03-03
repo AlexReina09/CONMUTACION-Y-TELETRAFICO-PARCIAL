@@ -6,3 +6,25 @@ Es la variación en el tiempo de llegada de los paquetes que tardan en promedio 
 
 Afectaría mas negativamente el jitter,ya que un jitter alto provoca que se entrecorte la voz, audio robótico, palabras incompletas. 
 el jitter altera la continuidad de una llamada.
+
+-------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------
+
+B). El protocolo UDP es mas eficiente por su throughput, y utiliza 8 bytes y el protocolo TCP utiliza mínimo 20 bytes.
+
+Por lo cual UDP tiene menor sobrecarga de bytes. esto permite mayor throughput efectivo en la transmisión de video. 
+
+- Envía más datos útiles por paquete.
+- No usa mecanismos de confirmación.
+- No retransmite paquetes.
+
+y TCP ofrece mayor control de la perdida de paquetes,
+
+- Un número de secuencia
+- Detecta paquetes perdido.
+- mantiene el orden correcto de los paquetes.
+- mayor control de congestión en la red.
+
+UDP no tiene este mecanismo de control, por lo cual si se pierde un paquete no se puede recuperar.
+Más eficiente en throughput: UDP, por su cabecera más pequeña y menor sobrecarga, y mayor control de pérdida de paquetes: TCP,
+por los campos adicionales en su cabecera.

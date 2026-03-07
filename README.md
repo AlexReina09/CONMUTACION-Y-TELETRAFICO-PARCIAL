@@ -47,3 +47,39 @@ Relación con ARP:
 ARP permite obtener la MAC destino necesaria para llenar el campo MAC destino de la trama Ethernet.
 Sin ARP, el dispositivo no sabría a qué dirección física enviar la trama.
 Relación con Ethernet: ARP permite completar el campo MAC destino de la trama Ethernet, haciendo posible el envío de datos en la red local.
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------
+D). 
+
+1). SNMPv2c y SNMPv3 se diferencian principalmente en seguridad y en la gestión de mensajes.
+
+SEGURIDAD
+SNMPv2c:
+
+Utiliza un mecanismo simple llamado community strings (como public o private) para el acceso.
+No tiene cifrado.
+No tiene autenticación fuerte.
+Es vulnerable a interceptación o acceso no autorizado.
+
+SNMPv3:
+Incorpora seguridad avanzada:
+
+Autenticación del usuario.
+Cifrado de los mensajes (privacidad).
+Integridad de datos para evitar modificaciones.
+SNMPv3 es mucho más seguro que SNMPv2c.
+
+2). Tipo de mensajes que manejan;
+
+Ambos utilizan operaciones básicas de administración de red, como:
+
+Get , Set, Trap , Response 
+
+Diferencias:
+
+SNMPv2c:
+Maneja estos mensajes sin mecanismos de seguridad, usando únicamente la community string.
+
+SNMPv3:
+Los mismos mensajes se envían con autenticación y posible cifrado, gracias a su arquitectura de seguridad (USM y VACM).

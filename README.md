@@ -191,6 +191,6 @@ Análisis: Una vez identificada la ruta, envía ráfagas de paquetes (pings) a c
 
 Resultado: Finalmente, calcula y muestra el porcentaje de pérdida de paquetes en cada nodo, permitiendo identificar exactamente en qué punto de la red se está produciendo un fallo o congestión.
 
-Anexo Captura del comaand por CMD,
+Anexo Captura del comando por CMD,
 
 ![Captura de pantalla 202klffjkf](https://github.com/user-attachments/assets/3a4c6e71-6cbe-4937-b16d-5bf979d66522)

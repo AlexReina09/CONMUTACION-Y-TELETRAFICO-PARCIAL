@@ -225,3 +225,45 @@ La diferencia fundamental radica en quién inicia la comunicación.
 inciativa, uso de red , tiempo d erespuest, craga de CPU.
 
 Ventaja del Trap: Es mucho más eficiente. Permite que el administrador de red se entere de un problema en el mismo segundo en que ocurre, sin necesidad de saturar el ancho de banda de la red.
+-----------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------
+4). 
+1): Verificación de Conectividad y Resolución de Nombre (DNS)
+
+Antes del envío, el sistema debe saber a qué dirección IP corresponde github
+
+Capa OSI: Capa 7 (Aplicación) para la consulta y Capa 4 (Transporte) generalmente sobre UDP.
+Protocolos y Estructuras: Protocolo DNS. Los datos se encapsulan en Datagramas (UDP).
+Comandos de Red: * nslookup github.com: Para verificar que el servidor DNS resuelve la IP correctamente.
+ping github.com: Para comprobar la latencia básica y conectividad ICMP.
+Teletráfico: Una latencia alta en el DNS retrasará el inicio del viaje de los datos, dando la sensación de que el comando "se queda pegado".
+
+2): Establecimiento de la Conexión Segura (TCP + TLS/SSH)
+
+git push requiere un canal confiable y cifrado para transmitir el código.
+
+Capa OSI: Capa 4 (Transporte) y Capa 5/6 (Sesión/Presentación para el cifrado).
+Protocolos y Estructuras: Protocolos TCP (puerto 443 o 22) y HTTPS/SSH. Los datos se organizan en Segmentos.
+Comandos de Red: * netstat -an: Para verificar si la conexión con la IP de GitHub está en estado ESTABLISHED.
+Filtro Wireshark: tcp.port == 443 para observar el saludo de tres vías (handshake).
+Teletráfico: La pérdida de paquetes en este punto es crítica; si se pierde un segmento del handshake, la conexión fallará y el commit nunca saldrá de la máquina local.
+
+3): Los Datos (Enrutamiento)
+
+Una vez establecida la conexión, los segmentos de Git viajan por internet a través de múltiples nodos.
+
+Capa OSI: Capa 3 (Red).
+Protocolos y Estructuras: Protocolo IP (v4 o v6) e ICMP. Los datos viajan en Paquetes.
+Comandos de Red: * tracert github.com: Para identificar en qué salto de la red se está produciendo un cuello de botella o caída.
+pathping github.com: Combina ping y tracert para dar estadísticas detalladas de pérdida por salto.
+Teletráfico: El Throughput (ancho de banda efectivo) determinará qué tan rápido se suben los archivos pesados. Un throughput bajo hará que la subida de la "nueva funcionalidad" sea lenta.
+
+4): El Medio Físico;
+
+Los bits finalmente se convierten en señales eléctricas, ópticas o de radio para salir de la oficina.
+
+Capa OSI: Capa 2 (Enlace de datos) y Capa 1 (Física).
+Protocolos y Estructuras: Ethernet o Wi-Fi. Los datos se convierten en Tramas (Frames) y finalmente en Bits.
+Comandos de Red: * ipconfig /all: Para verificar que la puerta de enlace (Gateway) es alcanzable y la interfaz está activa.
+Filtro Wireshark: eth.type == 0x0800 para ver el tráfico IP saliendo por la interfaz física.
+Teletráfico: El ruido en el medio físico (interferencia en Wi-Fi) provoca pérdida de paquetes, obligando a TCP a retransmitir, lo que reduce drásticamente el éxito de la operación.

@@ -107,3 +107,17 @@ El Trap no sería adecuado porque:
 
 Get: permite consultar el contador de bytes recibidos.
 Trap: solo envía notificaciones de eventos, no consultas de información.
+-----------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------
+2). A).
+La cabecera Ethernet es la encargada de la comunicación en la Capa 2 (Enlace de Datos) del modelo OSI. Según los datos de tu captura, estos son los componentes:
+
+Destino (MAC)
+Origen (MAC)
+Tipo (EtherType)
+
+El valor hexadecimal 0x0800 es un estándar fundamental en redes. Indica que el paquete de datos transportado dentro de esta trama Ethernet es un paquete IPv4 (Internet Protocol.
+
+Función: Este campo permite al receptor saber a qué "pila" de protocolos debe enviar los datos una vez que se retira la cabecera Ethernet. Si el valor fuera, por ejemplo, 0x86DD, el receptor sabría que se trata de IPv6.
+
+Relación con la captura: Puedes confirmar esto mirando la siguiente línea de tu imagen, donde efectivamente aparece: "Internet Protoco IPV4"

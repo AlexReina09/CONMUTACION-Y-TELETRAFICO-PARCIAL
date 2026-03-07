@@ -174,3 +174,22 @@ currirían los siguientes cambios estructurales:
 Reemplazo de Cabecera: La cabecera IPv4 sería sustituida por la Cabecera Fija de IPv6, que es más sencilla (8 campos frente a los 12 o más de IPv4) y utiliza direcciones de 128 bits.
 
 Mejora en el Procesamiento: Una de las mejoras más significativas es que los routers ya no calculan el Checksum (suma de comprobación) de la cabecera. En IPv6, se confía en que las capas superiores (como TCP) o las capas inferiores manejen la detección de errores, lo que reduce drásticamente la carga de procesamiento en cada salto y aumenta la velocidad de conmutación de los routers.
+-----------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------
+3). A).
+Comando pathping;
+
+Pathping 8.8.8.8.
+
+A diferencia de un ping (conectividad básica) o un tracert (solo ruta), pathping combina ambos y añade estadísticas de pérdida de paquetes por cada salto. Proporciona un análisis detallado de la latencia (RTT) y el porcentaje de pérdida en cada nodo intermedio durante un periodo de tiempo.
+
+Proceso que sigue pathping;
+
+Fase de rastreo: Primero realiza un seguimiento de la ruta similar a tracert para identificar todos los routers en el camino.
+
+Análisis: Una vez identificada la ruta, envía ráfagas de paquetes (pings) a cada router durante un tiempo determinado (por defecto, 250 milisegundos por salto).
+
+Resultado: Finalmente, calcula y muestra el porcentaje de pérdida de paquetes en cada nodo, permitiendo identificar exactamente en qué punto de la red se está produciendo un fallo o congestión.
+
+Anexo Captura del comaand por CMD,
+![Captura de pantalla 202klffjkf](https://github.com/user-attachments/assets/3a4c6e71-6cbe-4937-b16d-5bf979d66522)

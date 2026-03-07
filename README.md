@@ -28,3 +28,22 @@ y TCP ofrece mayor control de la perdida de paquetes,
 UDP no tiene este mecanismo de control, por lo cual si se pierde un paquete no se puede recuperar.
 Más eficiente en throughput: UDP, por su cabecera más pequeña y menor sobrecarga, y mayor control de pérdida de paquetes: TCP,
 por los campos adicionales en su cabecera.
+
+-------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------
+C). 
+1. Protocolo que llena la tabla es la suite TCP/IP que llena esta tabla es ARP (Address Resolution Protocol).
+
+2. Función principal de ARP es resolver una dirección IP en una dirección MAC dentro de una red local (LAN).
+ARP actua como traductor de entre IP Y MAC.
+
+3. Ralacion cuando los datos se envian por la red viajan dentro de una trama ethernet.
+que contiene; 
+
+Mac Destino, Mac Origen, Tipo,Datos,FCS
+
+Relación con ARP:
+
+ARP permite obtener la MAC destino necesaria para llenar el campo MAC destino de la trama Ethernet.
+Sin ARP, el dispositivo no sabría a qué dirección física enviar la trama.
+Relación con Ethernet: ARP permite completar el campo MAC destino de la trama Ethernet, haciendo posible el envío de datos en la red local.

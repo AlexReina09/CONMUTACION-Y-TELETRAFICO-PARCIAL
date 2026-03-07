@@ -162,3 +162,15 @@ Puerto Destino: 80 es un indicador clave del servicio al que se intenta acceder 
 Identificación del Servicio: El puerto 80 es el puerto estándar asignado por la IANA para el protocolo HTTP (HyperText Transfer Protocol).
 
 Indica que el cliente está intentando realizar una solicitud a un servidor web para obtener contenido no cifrado. Esto es consistente con la última línea de la captura, que muestra el método de aplicación.
+-----------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------
+2). D).
+Transición a IPv6;
+
+Si este paquete se enviara utilizando IPv6,
+
+currirían los siguientes cambios estructurales:
+
+Reemplazo de Cabecera: La cabecera IPv4 sería sustituida por la Cabecera Fija de IPv6, que es más sencilla (8 campos frente a los 12 o más de IPv4) y utiliza direcciones de 128 bits.
+
+Mejora en el Procesamiento: Una de las mejoras más significativas es que los routers ya no calculan el Checksum (suma de comprobación) de la cabecera. En IPv6, se confía en que las capas superiores (como TCP) o las capas inferiores manejen la detección de errores, lo que reduce drásticamente la carga de procesamiento en cada salto y aumenta la velocidad de conmutación de los routers.

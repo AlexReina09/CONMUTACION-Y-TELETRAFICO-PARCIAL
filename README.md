@@ -144,3 +144,21 @@ Radica en la estabilidad y salud de la red:
 - Prevención de bucles infinitos: Si existe un error de configuración en las tablas de enrutamiento, un paquete podría quedar atrapado girando entre dos o más routers para siempre. El TTL garantiza que el paquete sea destruido eventualmente, evitando que congestione el ancho de banda innecesariamente.
 
 - Diagnóstico: Es la base de herramientas como traceroute, que utiliza paquetes con TTL incrementales para identificar cada salto en la ruta hacia un destino.
+-----------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------
+2). C).
+1. Función de los Flags ACK y PSH.
+
+Los "flags" o banderas son bits de control que indican el estado o la acción requerida para ese segmento específico.
+
+ACK (Acknowledgment): Se utiliza para confirmar la recepción de datos. En este caso, el valor del campo "Acknowledgment Number: 1" indica que el emisor está confirmando que espera el siguiente byte del receptor.
+
+PSH (Push): Indica a la pila TCP del receptor que debe pasar los datos a la aplicación de inmediato, en lugar de esperar a que el búfer se llene. Es común en tráfico interactivo o solicitudes HTTP para asegurar una respuesta rápida.
+
+2. Puerto de Destino: 80
+
+Puerto Destino: 80 es un indicador clave del servicio al que se intenta acceder en el servidor.
+
+Identificación del Servicio: El puerto 80 es el puerto estándar asignado por la IANA para el protocolo HTTP (HyperText Transfer Protocol).
+
+Indica que el cliente está intentando realizar una solicitud a un servidor web para obtener contenido no cifrado. Esto es consistente con la última línea de la captura, que muestra el método de aplicación.

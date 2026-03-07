@@ -121,3 +121,26 @@ El valor hexadecimal 0x0800 es un estándar fundamental en redes. Indica que el 
 Función: Este campo permite al receptor saber a qué "pila" de protocolos debe enviar los datos una vez que se retira la cabecera Ethernet. Si el valor fuera, por ejemplo, 0x86DD, el receptor sabría que se trata de IPv6.
 
 Relación con la captura: Puedes confirmar esto mirando la siguiente línea de tu imagen, donde efectivamente aparece: "Internet Protoco IPV4"
+-----------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------
+2). B).
+Protocolo;
+
+Este campo indica a qué protocolo de la Capa de Transporte (modelo OSI) deben entregarse los datos una vez que se procesa el paquete IP.
+- En la captura: El valor es 6 (TCP).
+- Significado: Esto le dice al sistema operativo que el contenido del paquete es un segmento Transmission Control Protocol. Si el valor fuera 17, indicaría UDP; si fuera 1, sería ICMP.
+
+Campo: TTL (Time to Live);
+
+El TTL o "Tiempo de Vida" es un contador que limita la existencia del paquete en la red para evitar que circule indefinidamente.
+
+- Captura: El valor inicial es 128.
+- Funcionamiento: Cada vez que el paquete atraviesa un router (un "salto"), este dispositivo resta 1 al valor del TTL. Si el valor llega a 0 antes de alcanzar su destino, el router descarta el paquete y suele enviar un mensaje de error (ICMP Time Exceeded) al emisor.
+
+Es importante el TTL en la red.
+
+Radica en la estabilidad y salud de la red:
+
+- Prevención de bucles infinitos: Si existe un error de configuración en las tablas de enrutamiento, un paquete podría quedar atrapado girando entre dos o más routers para siempre. El TTL garantiza que el paquete sea destruido eventualmente, evitando que congestione el ancho de banda innecesariamente.
+
+- Diagnóstico: Es la base de herramientas como traceroute, que utiliza paquetes con TTL incrementales para identificar cada salto en la ruta hacia un destino.

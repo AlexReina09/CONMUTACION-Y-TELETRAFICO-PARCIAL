@@ -194,3 +194,34 @@ Resultado: Finalmente, calcula y muestra el porcentaje de pérdida de paquetes e
 Anexo Captura del comando por CMD,
 
 ![Captura de pantalla 202klffjkf](https://github.com/user-attachments/assets/3a4c6e71-6cbe-4937-b16d-5bf979d66522)
+-----------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------
+3).B).
+
+1). SNMP Walk;
+
+Para "caminar" por el árbol MIB (Management Information Base), la herramienta estándar de línea de comandos es snmpwalk.
+
+Aunque Windows no incluye esta herramienta de forma nativa en su instalación estándar, se utiliza comúnmente a través de la suite de herramientas Net-SNMP instalada en Windows. El comando específico para tu escenario sería:
+
+snmpwalk -v 2c -c public 192.168.1.1 1.3.6.1.2.1.2
+Desglose del comando:
+snmpwalk: Indica que queremos recorrer una rama del árbol de forma secuencial.
+-v 2c: Especifica que usaremos la versión 2c de SNMP.
+-c public: Define la comunidad de solo lectura (community string).
+192.168.1.1: La dirección IP del router.
+1.3.6.1.2.1.2: Este es el OID (Object Identifier) para la rama de interfaces. Si quieres caminar por todo el árbol, podrías simplemente no poner el OID o usar .1.
+
+2). Evento "authenticationFailure"
+
+Un mensaje de trap tipo authenticationFailure se genera cuando el router recibe un mensaje SNMP con un nombre de comunidad incorrecto.
+
+En tu caso, si alguien intentara consultar el router usando la comunidad "privado" en lugar de "public", el router enviaría esta alerta al gestor. Es una señal de advertencia de que un agente no autorizado (o mal configurado) está intentando acceder al dispositivo.
+
+3). Ventajas de Trap vs. Polling (Consultas)
+
+La diferencia fundamental radica en quién inicia la comunicación.
+
+inciativa, uso de red , tiempo d erespuest, craga de CPU.
+
+Ventaja del Trap: Es mucho más eficiente. Permite que el administrador de red se entere de un problema en el mismo segundo en que ocurre, sin necesidad de saturar el ancho de banda de la red.

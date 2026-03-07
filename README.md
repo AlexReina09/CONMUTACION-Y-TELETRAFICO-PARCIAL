@@ -238,6 +238,12 @@ Comandos de Red: * nslookup github.com: Para verificar que el servidor DNS resue
 ping github.com: Para comprobar la latencia básica y conectividad ICMP.
 Teletráfico: Una latencia alta en el DNS retrasará el inicio del viaje de los datos, dando la sensación de que el comando "se queda pegado".
 
+Anexo Captura del comando ejecutado:
+
+![Captura De Pantalla_01](https://github.com/user-attachments/assets/e4864d2c-2b94-47f1-a8ff-15335a4e3198)
+
+![Captura De Pantalla_02](https://github.com/user-attachments/assets/5903f38f-c918-4ea1-89f8-e7c75659bfe9)
+
 2): Establecimiento de la Conexión Segura (TCP + TLS/SSH)
 
 git push requiere un canal confiable y cifrado para transmitir el código.
@@ -267,3 +273,9 @@ Protocolos y Estructuras: Ethernet o Wi-Fi. Los datos se convierten en Tramas (F
 Comandos de Red: * ipconfig /all: Para verificar que la puerta de enlace (Gateway) es alcanzable y la interfaz está activa.
 Filtro Wireshark: eth.type == 0x0800 para ver el tráfico IP saliendo por la interfaz física.
 Teletráfico: El ruido en el medio físico (interferencia en Wi-Fi) provoca pérdida de paquetes, obligando a TCP a retransmitir, lo que reduce drásticamente el éxito de la operación.
+-----------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------
+Estructurar la respuesta siguiendo la secuencia lógica de eventos:
+Pasos 1 al 4;
+Estructurar la
+respuesta siguiendo la secuencia lógica de eventos

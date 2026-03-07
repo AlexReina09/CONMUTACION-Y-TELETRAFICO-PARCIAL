@@ -83,3 +83,27 @@ Maneja estos mensajes sin mecanismos de seguridad, usando únicamente la communi
 
 SNMPv3:
 Los mismos mensajes se envían con autenticación y posible cifrado, gracias a su arquitectura de seguridad (USM y VACM).
+-----------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------
+E). 
+Un OID (Object Identifier) es un identificador único en forma numérica jerárquica que se utiliza para identificar cada objeto o variable dentro de una base de datos de administración de red.
+
+Relación con la MIB:
+
+La MIB es una base de datos estructurada que contiene todos los objetos que pueden ser monitoreados o administrados en un dispositivo de red.
+
+-La variable dentro de la MIB tiene asignado un OID único.
+-El OID permite localizar y acceder a ese objeto específico dentro de la MIB.
+
+SNMP para consultar los bytes recibidos;
+
+Para saber la cantidad de bytes recibidos por una interfaz de red se utiliza la operación Get del protocolo SNMP.
+La operación Get permite consultar o leer el valor de una variable específica en la MIB, como el contador de bytes recibidos de una interfaz.
+
+El Trap no sería adecuado porque:
+
+- Un Trap es un mensaje de notificación enviado automáticamente por el dispositivo cuando ocurre un evento.
+- No sirve para consultar información específica bajo demanda.
+
+Get: permite consultar el contador de bytes recibidos.
+Trap: solo envía notificaciones de eventos, no consultas de información.
